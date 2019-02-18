@@ -106,7 +106,9 @@ li {
 input[type=checkbox]:checked + label.through {
     text-decoration: line-through;
 }
-
+label{
+   text-transform: uppercase;
+}
 .pend-ing{
 
   font-size: 1.5em;
@@ -117,5 +119,4 @@ input[type=checkbox]:checked + label.through {
   display: flex;
 flex-direction: column;
 padding: 20px;
-counter-reset: done-items undone-items;
 }
