@@ -8,31 +8,30 @@ var add = 0;
 
 
 
-var newArr = [];
-
-
 function addNewItem(list){
   var newlist = document.createElement('li');
-    newlist.classList += "pending";
+      newlist.classList += "pend-ing";
   var delBtn = document.createElement('button');
+      delBtn.classList += "delete";
+      delBtn.innerText = "delete";
   var span = document.createElement('span');
   var check = document.createElement('input');
-    check.setAttribute('type', 'checkbox');
-    check.classList += 'touch';
+      check.setAttribute('type', 'checkbox');
+      check.classList += 'touch';
+  var label = document.createElement('label');
+      label.classList += "through"
 
-  delBtn.innerText = "X";
-  newlist.innerText = inputText.value;
+
   if(inputText.value === undefined || inputText.value === " " || !inputText.value){
     return false;
   }
+  label.innerText = inputText.value;
   list.appendChild(newlist);
   newlist.appendChild(span);
   newlist.appendChild(delBtn);
   newlist.appendChild(check);
-
-  newArr.push(newlist)
-
-
+  newlist.appendChild(label);
+  
   delBtn.onclick = function(){
 
     list.removeChild(newlist);
@@ -58,15 +57,24 @@ function addNewItem(list){
     count--;
     done_list.innerText = count;
   }
+
 }
 }
 
 
 function clickButton(){
   btnAdd.onclick = function(){
-  addNewItem(todoList);
-  add++;
-  pending_list.innerText = add;
+    if(inputText.value === ""){
+        pending_list.innerText = add;
+    }else{
+      addNewItem(todoList);
+      inputText.value = "";
+      add++;
+      pending_list.innerText = add;
+    }
+
+
+
 
 
 }

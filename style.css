@@ -1,44 +1,121 @@
-li{
-  list-style: none;
-}
 
-input{
-  margin: 8px; 0;
-  box-sizing: border-box;
+html {
+  min-height: 100%;
 }
 
 body{
-  background: linear-gradient(-135deg, #E4A972, #9941D8) fixed;
+  margin: 20px;
+ font: 500 1.2em/1.2 'Roboto', sans-serif;
+
+}
+
+
+
+.container{
+  display: block;
+   width: 400px;
+   margin: 100px auto 0;
+}
+
+#todo{
+  margin: auto;
   text-align: center;
 }
+ul {
+  margin: 0;
+  padding: 0;
 
-#touch{
-  padding: left;
 }
 
-#pending{
-  position: absolute;
+
+  li * {
+  float: left;
+}
+
+
+input, button {
+  outline: none;
+}
+
+button{
+  outline: none;
+  background: none;
+  border: 0px;
+  color: #888;
+  font-size: 15px;
+  width: 60px;
+  margin: 10px 0 0;
+  font-family: Lato, sans-serif;
+  cursor: pointer;
+
+}
+button:hover {
+  color: #333;
+}
+
+#inputText{
+  margin: 0;
+  font-size: 18px;
+  line-height: 18px;
+  height: 18px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+  font-family: Lato, sans-serif;
+    font-size: 15px;
+  color: #888;
   text-align: left;
-  border: 2px solid white;
-  padding: 7px;
-  margin: 7px;
-
-  bottom: 7%;
-  width: 70%;
+  outline: none;
 }
 
-#done{
 
-  position: absolute;
-  text-align: left;
-  border: 2px solid white;
-  padding: 7px;
-  margin: 7px;
-
-  bottom: 0;
-  width: 70%;
+.delete{
+  background: none;
+  border: 0px;
+  color: #888;
+  font-size: 15px;
+  width: 60px;
+  margin: 10px 0 0;
+  font-family: Lato, sans-serif;
+  cursor: pointer;
+  float: right;
+}
+h1 {
+  margin: 0;
+   padding: 20px;
+   background-color: rgba(255, 255, 255, .4);
+   font-size: 1.8em;
+   text-align: center;
 }
 
-#done_list{
-  text-align: right;
+
+li {
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+
+}
+.touch{
+  margin: 0 10px;
+  position: relative;
+  top: 15px;
+
+}
+input[type=checkbox]:checked + label.through {
+    text-decoration: line-through;
+}
+
+.pend-ing{
+
+  font-size: 1.5em;
+
+}
+
+.items{
+  display: flex;
+flex-direction: column;
+padding: 20px;
+counter-reset: done-items undone-items;
 }
